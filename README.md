@@ -1,4 +1,4 @@
-# WPSD-SeenGreatUPS-Monitor
+# WPSD-SeenGreat-UPS-Monitor
 Script for Raspberry PI UPS from SeenGreat, to monitor and shut the pi down when battery falls below 20%
 
 This script at this time is specifically written for the WPSD hotspot usage as it will write the the status to the OLED screen on the hotspot when the system is detected as running on battery.
