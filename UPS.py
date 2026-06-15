@@ -15,7 +15,6 @@ CURRENT_NOISE_THRESHOLD = 50   # mA
 
 # Initialize INA219 at correct address
 ina = INA219(addr=0x43)
-import subprocess
 
 def oled(line1="", line2="", size1=12, size2=12):
     cmd = [
