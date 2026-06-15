@@ -3,6 +3,8 @@
 mkdir /opt/UPS
 #Copy the python files to the directory
 cp *.py /opt/UPS
+# This will go away eventually
+cp Contrib/*.py /opt/UPS
 #Install the smbus python3 module.
 apt install python3-smbus
 #copy the systemd file to the correct location
