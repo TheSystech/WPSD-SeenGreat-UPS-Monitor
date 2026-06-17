@@ -9,6 +9,7 @@ if [[ "$output" == *"SMBus"* ]]; then
   echo "SMBus was already installed"
 else
   #Install the smbus python3 module.
+  apt update
   apt -y install python3-smbus
 fi
 #copy the systemd file to the correct location
