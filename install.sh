@@ -1,6 +1,6 @@
 #!/bin/bash
 # Make directory 
-mkdir /opt/UPS
+mkdir -p /opt/UPS
 #Copy the python files to the directory
 cp *.py /opt/UPS
 #Check to see if smbus python module is available
