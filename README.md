@@ -9,15 +9,10 @@ I also made modifications to allow it to run on a pistar hotspot that uses the S
 SSH to the pi-star system and run the following
 
 rpi-rw
-
 git clone --branch Beta --single-branch -depth 1 https://github.com/TheSystech/WPSD-SeenGreat-UPS-Monitor.git
-
 cd WPSD-SeenGreat-UPS-Monitor
-
 chmod +x install.sh
-
 sudo ./install.sh
-
 
 
 You can either manually follow the steps in install.sh, or you can chmod +x on install.sh and run it with SUDO after cloning to the system.
