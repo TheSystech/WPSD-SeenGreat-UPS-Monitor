@@ -18,5 +18,6 @@ chmod +x install.sh
 
 sudo ./install.sh
 
+rpi-ro
 
 You can either manually follow the steps in install.sh, or you can chmod +x on install.sh and run it with SUDO after cloning to the system.
