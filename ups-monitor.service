@@ -3,7 +3,7 @@ Description=UPS Battery Monitor
 After=multi-user.target
 
 [Service]
-ExecStart=/usr/bin/python3 /opt/UPS/UPS.py
+ExecStart=/usr/bin/python3 /opt/UPS/UPS_monitor.py
 Restart=always
 
 [Install]
