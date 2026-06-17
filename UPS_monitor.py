@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # =============================================================================
-# UPS_combined.py
+# UPS_monitor.py
 #
 # Combined UPS battery monitor script.
 # Merges: INA219.py, wpsd-oled.text.py, and UPS.py into a single file.
@@ -551,26 +551,27 @@ def main():
           f"LOW_BATTERY_PERCENT={low_battery_percent}, "
           f"CURRENT_NOISE_THRESHOLD={noise_threshold}")
 
-    # Initialize INA219 at correct address
-    ina = INA219(addr=0x43)
 
-    # Initialize the OLED display device
-    oled_device = init_oled_device()
-    if oled_device is None:
-        print("Warning: OLED display could not be initialized. Continuing without display.", file=sys.stderr)
-
+    
     while True:
+        
+        # Initialize INA219 at correct address
+        ina = INA219(addr=0x43)
         bus_voltage = ina.getBusVoltage_V()
         current_ma = ina.getCurrent_mA()
 
         battery_percent = get_battery_percent(bus_voltage, v_full, v_empty)
-
+        del ina
         print(f"Voltage: {bus_voltage:.2f} V | Current: {current_ma:.0f} mA | Battery: {battery_percent}%")
 
         if mains_present(current_ma, noise_threshold):
             print("Mains power detected (charging).")
         else:
             print("Running on battery power (discharging).")
+            # Initialize the OLED display device
+            oled_device = init_oled_device()
+            if oled_device is None:
+                print("Warning: OLED display could not be initialized. Continuing without display.", file=sys.stderr)
             oled(
                 oled_device,
                 line1=f"Running on Bat",
@@ -580,6 +581,7 @@ def main():
             )
             if battery_percent <= low_battery_percent:
                 oled(oled_device, "LOW BATTERY", "SHUTTING DOWN", size1=14, size2=14)
+                time.sleep(5)
                 shutdown_pi()
 
         time.sleep(120)
