@@ -13,7 +13,7 @@ Specific to Pi-Star the steps for install would be:
 
 SSH to the pi-star system and run the following
 
-`rpi-rw`
+>rpi-rw
 `git clone --branch Beta --single-branch -depth 1 https://github.com/TheSystech/WPSD-SeenGreat-UPS-Monitor.git`
 `cd WPSD-SeenGreat-UPS-Monitor`
 `chmod +x install.sh`
