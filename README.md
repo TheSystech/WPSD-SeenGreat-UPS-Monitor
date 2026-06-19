@@ -20,3 +20,11 @@ cd WPSD-SeenGreat-UPS-Monitor
 chmod +x install.sh
 sudo ./install.sh
 rpi-ro
+
+For wpsd it's a bit simpler because it doesn't do read-only file systems.
+```bash
+git clone --branch Beta --single-branch -depth 1 https://github.com/TheSystech/WPSD-SeenGreat-UPS-Monitor.git
+cd WPSD-SeenGreat-UPS-Monitor
+chmod +x install.sh
+sudo ./install.sh
+
